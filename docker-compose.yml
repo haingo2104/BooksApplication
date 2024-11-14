@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+ 
+  backend:
+    build: ./back               
+    container_name: node-app        
+    ports:
+      - 3000:3000                   
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/livres
+    depends_on:
+      - mongo                        
+    networks:
+      - mynetwork
+
+  mongo:
+    image: mongo:latest             
+    ports:
+      - 27017:27017 
+    container_name: mongo-container 
+    volumes:
+      - mongo-data:/data/db          
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:                          
+
+volumes:
+  mongo-data:                          

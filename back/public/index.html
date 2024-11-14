@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Livre</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap">
+
+
+</head>
+
+<body>
+    <div class="container">
+        <img src="image.png" alt="" class="image-livre">
+        <div class="formulaire">
+            <h1>Ajouter un Livre</h1>
+            <form id="bookForm">
+                <div>
+                    <label for="title">Titre :</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div>
+                    <label for="author">Auteur :</label>
+                    <input type="text" id="author" name="author" required>
+                </div>
+                <div>
+                    <label for="publicationYear">Date de publication :</label>
+                    <input type="date" id="publicationYear" name="publicationYear" required>
+                </div>
+                <button type="submit">Enregistrer</button>
+            </form>
+            <div id="successModal" class="modal" style="display:none;">
+                <div class="modal-content">
+                    <p>Ajout réussi !</p>
+                    <button id="closeModalButton">Fermer</button>
+                </div>
+            </div>
+        </div>
+        <div class="liste">
+            <h1>Liste des Livres</h1>
+            <ul id="booksList">
+            </ul>
+            <div id="pagination" class="pagination"></div>
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
